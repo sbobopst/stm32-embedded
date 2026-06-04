@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-st-nucleo-l031k6", "id": "nucleo", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 121.2,
+      "left": 90.2,
+      "attrs": { "color": "blue" }
+    }
+  ],
+  "connections": [
+    [ "$serialMonitor:TX", "nucleo:VCP_RX", "", [] ],
+    [ "$serialMonitor:RX", "nucleo:VCP_TX", "", [] ],
+    [ "nucleo:D3", "led1:A", "green", [ "h0" ] ],
+    [ "led1:C", "nucleo:GND.2", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
